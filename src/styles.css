@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+body {
+  color: gainsboro;
+}
+
+h2 {
+  color: #6e85db;
+}
+
+.form-size {
+  width: auto !important;
+}
+
+.margin-topHeader {
+  margin-top: 100px !important;
+  margin-left: 50px !important;
+}
+
+input[type=radio] {
+  display: inline;
+}
+
+.tabs-size {
+  font-size: 30px !important;
+}
+
+.margin-padding-none {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px 0px 0px 0px !important;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42A948;
+  /* green */
+}
+
+.error_message {
+  color: red;
+  /* red */
+}

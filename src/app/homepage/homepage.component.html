@@ -1,0 +1,94 @@
+<form #homepage="ngForm">
+  <div class="col-12 margin-padding-none">
+    <div class=" col-4 margin-topHeader">
+      <span>
+        <label for="fname">First Name</label>
+        <input type="text" class="form-control form-size" id="fname" required name="firstname" [(ngModel)]="homepageObject.firstName"
+          #firstname="ngModel">
+        <div role="alert" *ngIf="firstname?.touched && firstname?.errors?.required" class="error_message">
+          First Name is required
+        </div>
+      </span>
+      <span>
+        <label for="mname">Middle Name</label>
+        <input type="text" class="form-control form-size" id="mname" required name="middlename" pattern="[a-zA-Z ]*" [(ngModel)]="homepageObject.middleName"
+          #middlename="ngModel">
+        <div role="alert" *ngIf="middlename?.touched && middlename?.errors?.pattern" class="error_message">
+          Last Name is Invalid
+        </div>
+      </span>
+      <span>
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control form-size" id="lname" required name="lastname" [(ngModel)]="homepageObject.lastName"
+          #lastname="ngModel">
+        <!-- <div role="alert" *ngIf="lastname?.touched && lastname?.errors?.required" class="error_message">
+        Last Name is required
+      </div> -->
+      </span>
+      <span>
+        <label for="suffix">Suffix</label>
+        <select class="form-control form-size" id="name" required name="Suffix" [(ngModel)]="homepageObject.suffix" #Suffix="ngModel">
+          <option value="Jr">Jr</option>
+          <option value="Sr">Sr</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+        </select>
+        <!-- <div role="alert" *ngIf="Suffix?.touched && Suffix?.errors?.required" class="error_message">
+        First Name is required
+      </div> -->
+      </span>
+      <span>
+        <label for="phone">Phone Number</label>
+        <input type="text" [textMask]="{mask: mask}" class="form-control form-size" id="ssn" required name="phonenumber" [(ngModel)]="homepageObject.phoneNumber"
+          #phonenumber="ngModel">
+        <!-- <div role="alert" *ngIf="phonenumber?.touched && phonenumber?.errors?.required" class="error_message">
+        First Name is required
+      </div> -->
+      </span>
+
+    </div>
+    <!-- <div class=" col-4 margin-topHeader">
+    <h2>Mailing Address</h2>
+    <p>Do you want to fill your address?</p>
+    <div class="form-group">
+      <div class="radio radio-primary radio-inline radio-inline_d" style=" width:auto">
+        <input type="radio" name="mailingAddressSameAsResidential"  [value]="true"  id="mailingAddressSame">
+        <label for="mailingAddressSame"  [innerHTML]="'Yes'"></label>
+      </div>
+      <div class="radio radio-primary radio-inline radio-inline_d" style=" width:auto">
+        <input  type="radio" name="mailingAddressSameAsResidential"  [value]="false"  id="mailingAddressNotSame">
+        <label for="mailingAddressNotSame"  [innerHTML]="'No'">No</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <span>
+        <label for="line1">Address Line1</label>
+        <input type="text" class="form-control form-size" id="line1" required name="line1">
+      </span>
+      <span>
+        <label for="line2">Middle Name</label>
+        <input type="text" class="form-control form-size" id="line2" required name="line2">
+      </span>
+      <span>
+        <label for="city">City</label>
+        <input type="text" class="form-control form-size" id="city" required name="city">
+      </span>
+      <span>
+        <label for="state">State</label>
+        <input type="text" class="form-control form-size" id="state" required name="state">
+      </span>
+      <span>
+        <label for="zip">Zip</label>
+        <input type="text" class="form-control form-size" id="zip" required name="zip">
+      </span>
+    </div>
+  </div> -->
+
+  </div>
+</form>
+<button class="margin-topHeader btn btn-primary" [disabled]="homepage.invalid" (click)="saveTrack()"> Add to table</button>
+<button class="margin-topHeader btn btn-primary"> batch1</button>
+<button class="margin-topHeader btn btn-primary"> batch2</button>
+
+<toaster-container [toasterconfig]="toasterconfig">
+  </toaster-container>
